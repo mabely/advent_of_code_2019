@@ -15,7 +15,14 @@ class Calculate
   end
 
   def self.fuel mass
-    (mass/3)-2
+    total_fuel = (mass/3)-2
+    module_fuel = (mass/3)-2
+
+    while (module_fuel/3)-2 >= 0
+      module_fuel = (module_fuel/3)-2
+      total_fuel += module_fuel
+    end
+    total_fuel
   end
 end
 

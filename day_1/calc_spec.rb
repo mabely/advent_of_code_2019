@@ -22,14 +22,20 @@ describe Calculate do
   end
 
   describe ".fuel" do
-    let(:input) { 12 }
-
     it "calculates fuel" do
       expect(described_class.fuel(12)).to eq 2
     end
 
     it "rounds down" do
       expect(described_class.fuel(14)).to eq 2
+    end
+
+    it "calculates fuel required for fuel when mass is 1969" do
+      expect(described_class.fuel(1969)).to eq 966
+    end
+
+    it "calculates fuel required for fuel when mass is 100756" do
+      expect(described_class.fuel(100756)).to eq 50346
     end
   end
 end
